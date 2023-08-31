@@ -1,0 +1,168 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+# Imports
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# In[2]:
+
+
+# Lendo arquivo csv
+df = pd.read_csv("dados.csv")
+
+
+# In[3]:
+
+
+df.head()
+
+
+# > ## Calculando quais os valores mínimos, máximos e médios de pontuação de cada matéria
+
+# ### Valores para `Matemática`
+
+# In[4]:
+
+
+matmax = df["math score"].max()    # Máxima
+matmin = df["math score"].min()    # Mínima
+matmean = df["math score"].mean()  # Média
+
+print(f"Valor MÁXIMO em matemática: {matmax}",
+     f"\nValor MÍNIMO em matemática: {matmin}",
+      f"\nValor MÉDIO em matemática: {matmean}")
+
+
+# ### Valores para `Leitura`
+
+# In[5]:
+
+
+readmax = df["reading score"].max()    # Máxima
+readmin = df["reading score"].min()    # Mínima
+readmean = df["reading score"].mean()  # Média
+
+print(f"Valor MÁXIMO para leitura: {readmax}",
+      f"\nValor MÍNIMO para leitura: {readmin}",
+      f"\nValor MÉDIO para leitura: {readmean}")
+
+
+# ### Valores para `Escrita`
+
+# In[6]:
+
+
+writmax = df["writing score"].max()
+writmin = df["writing score"].min()
+writmean = df["writing score"].mean()
+
+print(f"Valor MÁXIMO para escrita: {writmax}",
+     f"\nValor MÍNIMO para escrita: {writmin}",
+     f"\nValor MÉDIO para escrita: {writmean}")
+
+
+# > ## Média em Matemática por Raça/Etnia
+
+# In[7]:
+
+
+df.head()
+
+
+# In[29]:
+
+
+# Agrupando raça/etnia por média em matemática
+df2 = df.groupby("race/ethnicity")[["math score"]].mean()
+
+
+# In[21]:
+
+
+# df agrupado
+df2.head()
+
+
+# In[30]:
+
+
+# Plot
+df2.plot(kind = "bar")
+
+
+# > #### Conclusão:
+# > - Vemos que group A, grupo B, grupo C, e grupo D se manteram com a média acima de 60.00 e abaixo de 70.00. No entanto, o grupo E foi o único grupo a ultrapassar 70.00, alcançando a média em matemática de 73.82.
+
+# > ## Média em Escrita por Nível de Escolaridade dos Pais
+
+# In[11]:
+
+
+df.head()
+
+
+# In[17]:
+
+
+# Agrupando "nível escolaridade dos pais" por média em "escrita"
+df3 = df.groupby("parental level of education")[["writing score"]].mean()
+
+
+# In[22]:
+
+
+# df agrupado
+df3
+
+
+# In[31]:
+
+
+# Plot
+df3.plot(kind = "bar")
+
+
+# > #### Conclusão:
+# > - "associate's degree", "high school", "some college" e "some high school" se manteram com a média acima de 60.00 e abaixo de 70.00. No entanto, "bachelor's degree" e "master's degree" se mantiveram com a média acima de 70.00, sendo assim 73.38 e 75.67 respectivamente.
+
+# > ## Média em Leitura por Participação em um Curso Preparatório Para os Testes
+
+# In[23]:
+
+
+df.head()
+
+
+# In[25]:
+
+
+# Agrupando "curso preparatório" por média em "leitura"
+df4 = df.groupby("test preparation course")[["reading score"]].mean()
+
+
+# In[ ]:
+
+
+
+
+
+# In[27]:
+
+
+# df agrupado
+df4.head()
+
+
+# In[28]:
+
+
+df4.plot(kind = "bar")
+
+
+# > #### Conclusão:
+# > - Vemos aqui que a média de pessoas que fizeram o curso preparatório obteram uma média de escrita maior dos que não fizeram o curso preparatório. Sendo assim, as médias foram 73.89 para quem fez o curso, e 66.53 para quem não fez o curso preparatório.
