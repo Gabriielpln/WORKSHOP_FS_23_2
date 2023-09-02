@@ -1,2 +1,27 @@
 Link para visualização:
 https://app.powerbi.com/view?r=eyJrIjoiOWNiZDU4NDgtMDgyYi00ZTY5LWI4YWEtYTIwYWQzMDk2MTYwIiwidCI6IjVmYmVmMjIwLTc5ZjAtNGI4ZS1iMTY1LTlhMGZiNDA5Y2ZkYiJ9
+
+
+
+# Descrição do Dashboard:
+
+  Este é um resumo de análise de dados de Recursos Humanos. Foi observado algumas tendências interessantes:
+- Em termos de gênero, temos mais funcionários do sexo masculino do que feminino. Além disso, os salários dos homens
+são, em média, maiores. No entanto, a média geral dos salários das mulheres é superior.
+
+- A função de 'Cientista de Dados' é a mais representada em nossa empresa, com um total de 638 funcionários, dos quais
+248 são mulheres e 390 são homens.
+
+- No que diz respeito à disponibilidade para horas extras, a maioria dos funcionários não está disponível,
+representando 71,57% do total de funcionários.
+
+- Quando se trata de envolvimento no trabalho, a maioria dos funcionários (59%) tem um envolvimento classificado como 'médio',
+enquanto apenas 5,64% apresentam um envolvimento considerado 'ruim'. Embora a média geral seja boa, é importante buscar maneiras
+de aumentar o envolvimento 'alto'.
+
+Soluções Implementadas do Dataset:
+
+No processo de Criação desse Dashboard, foram implementadas melhorias, incluindo a criação de uma tabela exclusiva
+para medidas (TotalFeminino, TotalMasculino, TotalFunc) usando funções DAX, e a substituição de valores
+em "Disponível Hora Extra" de "s/n" para "Sim/Não". Essas ações tornaram o dashboard mais preciso, compreensível
+e amigável aos usuários finais.
